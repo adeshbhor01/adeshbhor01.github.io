@@ -14,8 +14,94 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* Small fallback styles for new sections and working back-to-top button.
-       Keep these here so you do not need to edit styles.css right now. */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .section-pad {
+      overflow: hidden;
+    }
+
+    .about-clean {
+      display: block;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .about-clean .section-heading {
+      max-width: 1000px;
+      margin-bottom: 26px;
+    }
+
+    .about-clean .section-heading h2 {
+      max-width: 1000px;
+      font-size: clamp(2.25rem, 5vw, 4.9rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin-bottom: 0;
+    }
+
+    .about-clean .section-text {
+      max-width: 1040px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-clean .section-text p {
+      margin: 0;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .education-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.09);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.07);
+    }
+
+    .education-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .education-card .org {
+      margin-bottom: 16px;
+    }
+
+    .research-card {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .note-box {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(15, 118, 110, 0.08);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+    }
+
+    .note-box p {
+      margin: 0;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
 
     .back-to-top {
       position: fixed;
@@ -48,56 +134,29 @@
       transform: translateY(-3px);
     }
 
-    .resume-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 32px;
+    .project-grid {
+      align-items: stretch;
     }
 
-    .resume-card {
-      background: #ffffff;
-      border: 1px solid rgba(15, 23, 42, 0.09);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.07);
+    .site-footer a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
     }
 
-    .resume-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
+    @media (max-width: 760px) {
+      .about-clean .section-heading h2 {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+        line-height: 1;
+      }
 
-    .resume-card p {
-      margin-bottom: 20px;
-    }
+      .hero-actions {
+        align-items: stretch;
+      }
 
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .research-card {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .note-box {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(15, 118, 110, 0.08);
-      border: 1px solid rgba(15, 118, 110, 0.18);
-    }
-
-    .note-box p {
-      margin: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      .hero-actions .btn {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -118,24 +177,23 @@
 
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
-        <a href="#resume">Resume</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Electrical Engineering Portfolio · Dallas, TX · Open to relocation</p>
 
-          <h1>Electrical Engineer: PCB Design, Hardware Validation, Controls & Manufacturing</h1>
+          <h1>Electrical Engineer — PCB Design, Hardware Validation, Controls & Manufacturing</h1>
 
           <p class="hero-subtitle">
             M.S. Electrical Engineering graduate from the University of Oklahoma with hands-on experience in Altium PCB workflows,
@@ -147,7 +205,7 @@
             <a class="btn btn-secondary" href="assets/docs/Adesh_Bhor_Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
           </div>
 
-          <div class="hero-tags" aria-label="Target roles">
+          <div class="hero-tags" aria-label="Target areas">
             <span>PCB Design</span>
             <span>Hardware Test</span>
             <span>Controls Automation</span>
@@ -175,10 +233,6 @@
               <dd><a href="https://www.linkedin.com/in/adesh-bhor" target="_blank" rel="noreferrer">linkedin.com/in/adesh-bhor</a></dd>
             </div>
             <div>
-              <dt>GitHub</dt>
-              <dd><a href="https://github.com/adeshbhor01" target="_blank" rel="noreferrer">github.com/adeshbhor01</a></dd>
-            </div>
-            <div>
               <dt>Website</dt>
               <dd><a href="https://www.adeshbhor.com" target="_blank" rel="noreferrer">adeshbhor.com</a></dd>
             </div>
@@ -186,13 +240,12 @@
 
           <div class="availability">
             <span class="pulse"></span>
-            Actively targeting PCB design, hardware validation, controls/automation, manufacturing/test, and electrical engineering roles.
+            Open to PCB design, hardware validation, controls/automation, manufacturing/test, and electrical engineering roles.
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- METRICS -->
     <section class="metrics">
       <div class="container metrics-grid">
         <article class="metric reveal">
@@ -222,9 +275,8 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="section-pad" id="about">
-      <div class="container two-column">
+      <div class="container about-clean">
         <div class="section-heading reveal">
           <p class="eyebrow">About</p>
           <h2>Practical engineering from circuit design to validation, automation, and manufacturing support.</h2>
@@ -244,24 +296,386 @@
           </p>
 
           <p>
-            I bring a documentation-first approach: every project I work on should produce traceable, repeatable, and
-            reviewable results. This portfolio is built for recruiters and hiring managers to quickly see what I have
-            worked on, what tools I used, how I validated the work, and what improved.
+            I focus on clear design decisions, repeatable validation, technical documentation, and practical engineering
+            handoff. The goal is to show not only what I worked on, but how I approached the problem, tested the result,
+            and improved the system or workflow.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <section class="section-pad muted" id="experience">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Experience</p>
+          <h2>Hands-on engineering experience across research, teaching, manufacturing, product design, and technical systems.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Apr 2023 – May 2026</span>
+            <h3>Graduate Research Assistant · Electrical Engineering</h3>
+            <p class="org">University of Oklahoma</p>
+            <p>
+              Built repeatable Xschem/ngspice circuit simulation workflows using ASAP7 FinFET models, Python waveform
+              post-processing, and multi-variable parameter sweeps. Analyzed reset behavior, firing frequency, power,
+              energy, and robustness for a hybrid LIF neuron thesis, while also resolving FPGA timing-closure and
+              interface issues that improved image-classification throughput by 30%.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2025 – 2026</span>
+            <h3>Graduate Teaching Assistant · Electronics Labs</h3>
+            <p class="org">University of Oklahoma</p>
+            <p>
+              Guided students through electronics labs involving oscilloscopes, DMMs, bench power supplies, function
+              generators, MOSFET/BJT switching circuits, PID-control labs, filters, 555 timers, LM324 comparators,
+              safe measurement practices, and structured circuit debugging.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Jun 2024 – Jul 2024</span>
+            <h3>Electronics Manufacturing Intern</h3>
+            <p class="org">GM Electronics</p>
+            <p>
+              Supported prototype PCBA builds, in-process testing, final QC, defect tracking, and corrective-action
+              documentation. Standardized SMT setup practices for a JUKI RS-1R placement machine, including feeder
+              mapping, nozzle/component setup, and vision-setting workflows in a QMS/5S environment, contributing to
+              approximately 30,000 additional placements per day and an 11% daily production efficiency improvement.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Aug 2023 – May 2024</span>
+            <h3>Product Design Intern</h3>
+            <p class="org">Tom Love Innovation Hub / Irani Center</p>
+            <p>
+              Led 60+ user and stakeholder interviews, validation testing, and electromechanical prototyping to improve
+              prototype accuracy by 40% and support manufacturability decisions based on sensor limitations, user
+              feedback, and test results.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">May 2021 – Sep 2021</span>
+            <h3>Technology Assistant · Library Technology Platform</h3>
+            <p class="org">University of Oklahoma</p>
+            <p>
+              Supported 1,000+ campus devices across endpoint deployment, troubleshooting, AV support, and user-facing
+              technology service requests. Used KACE image deployment, Jira ticket tracking, and BeyondTrust/Bomgar
+              remote support workflows, improving imaging efficiency by 50x and reducing device setup time by 90%.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="education">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Education</p>
+          <h2>Electrical engineering foundation with graduate research in CMOS neuromorphic circuit simulation.</h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <span class="timeline-date">University of Oklahoma · Norman, OK</span>
+            <h3>M.S. Electrical Engineering · May 2026</h3>
+            <p class="org">GPA 3.8 · Thesis research in CMOS neuromorphic circuit simulation</p>
+            <p>
+              Thesis: A Hybrid Leaky Integrate-and-Fire Neuron with Tunable Reset Behavior in 7 nm Fin Field-Effect
+              Transistor Technology. Focused on Xschem/ngspice simulation, ASAP7 FinFET models, reset behavior,
+              frequency, energy per spike, static power, and robustness analysis.
+            </p>
+          </article>
+
+          <article class="education-card reveal">
+            <span class="timeline-date">University of Oklahoma · Norman, OK</span>
+            <h3>B.S. Electrical Engineering</h3>
+            <p class="org">GPA 3.56</p>
+            <p>
+              Built a foundation in circuit analysis, electronics, digital systems, embedded systems, controls,
+              signal processing, and hands-on laboratory measurement.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad muted" id="research">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Thesis Research</p>
+          <h2>Hybrid LIF neuron simulation and reset-aware circuit validation.</h2>
+          <p class="section-note">
+            M.S. thesis research focused on compact CMOS neuromorphic neuron design, Xschem/ngspice simulation,
+            ASAP7 FinFET models, Python waveform analysis, and reset/frequency/energy tradeoffs.
+          </p>
+        </div>
+
+        <article class="project-card research-card reveal" data-category="hardware research">
+          <img src="assets/img/validation-workflow.svg" alt="Circuit simulation and validation workflow diagram" />
+
+          <div class="project-body">
+            <div class="project-meta">
+              <span>University Research</span>
+              <span>Apr 2023 – May 2026</span>
+              <span>Xschem / ngspice</span>
+            </div>
+
+            <h3>A Hybrid Leaky Integrate-and-Fire Neuron with Tunable Reset Behavior in 7 nm FinFET Technology</h3>
+
+            <p>
+              Designed and simulated a compact Besrour-derived hybrid LIF neuron with an added reset/timing branch.
+              The workflow compared the hybrid neuron against a baseline design using reset behavior, firing frequency,
+              dynamic energy per spike, static power, and robustness.
+            </p>
+
+            <details>
+              <summary>Quick facts</summary>
+              <ul>
+                <li><strong>Tools:</strong> Xschem, ngspice, ASAP7 FinFET models, Python, MATLAB.</li>
+                <li><strong>Validation:</strong> transient simulation, parameter sweeps, waveform post-processing, frequency and energy analysis.</li>
+                <li><strong>Result:</strong> identified operating tradeoffs between performance-oriented and robustness-oriented reset behavior.</li>
+                <li><strong>Technical value:</strong> repeatable simulation, waveform analysis, design tradeoff documentation, and research-grade technical communication.</li>
+              </ul>
+            </details>
+
+            <div class="note-box">
+              <p>
+                Thesis PDF and selected waveform/schematic visuals will be added here after final upload.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-pad" id="projects">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected engineering projects across PCB design, validation, controls, manufacturing, and research.</h2>
+        </div>
+
+        <div class="filter-bar reveal" aria-label="Project filters">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="pcb">PCB</button>
+          <button class="filter-btn" type="button" data-filter="hardware">Hardware Test</button>
+          <button class="filter-btn" type="button" data-filter="controls">Controls</button>
+          <button class="filter-btn" type="button" data-filter="manufacturing">Manufacturing</button>
+          <button class="filter-btn" type="button" data-filter="research">Research</button>
+          <button class="filter-btn" type="button" data-filter="it">IT</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal" data-category="pcb">
+            <img src="assets/img/pcb-release.svg" alt="PCB design and manufacturing release diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>PCB Design</span>
+                <span>Altium Designer</span>
+              </div>
+
+              <h3>PCB Design & Manufacturing Release Package</h3>
+
+              <p>
+                Completed a full PCB design workflow in Altium Designer: schematic capture, custom symbol and footprint
+                libraries, component placement, manual routing, ERC/DRC verification, and manufacturing package generation.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools:</strong> Altium Designer, schematic capture, PCB layout, ERC/DRC, Gerber/NC drill files, BOM, pick-and-place, STEP/3D, DFM.</li>
+                  <li><strong>Technical focus:</strong> 4-layer stackup planning, power/ground planes, mixed-signal grounding, and EMI/EMC-aware routing.</li>
+                  <li><strong>Validation:</strong> design-rule checks, output-job consistency review, manufacturing handoff review, and DFM-oriented documentation.</li>
+                  <li><strong>Technical value:</strong> practical board-design workflow from schematic to fabrication/assembly release.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="controls hardware">
+            <img src="assets/img/monitoring-system.svg" alt="Industrial monitoring system architecture diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>Controls</span>
+                <span>Python / Modbus RTU</span>
+              </div>
+
+              <h3>Industrial Air Compressor Monitoring System</h3>
+
+              <p>
+                Designed and deployed a distributed industrial monitoring system using Raspberry Pi, ADS1115 ADC interfaces,
+                RS-485 wiring, Modbus RTU communication, and a Streamlit/Plotly dashboard with alarm thresholds.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools:</strong> Raspberry Pi, Python, ADS1115 ADC, RS-485, Modbus RTU, Streamlit, Plotly.</li>
+                  <li><strong>Validation:</strong> sensor node checks, Modbus RTU communication verification, dashboard testing, alarm threshold testing, and deployment documentation.</li>
+                  <li><strong>Result:</strong> reduced compressor downtime by 20% through better operator visibility and documented troubleshooting workflows.</li>
+                  <li><strong>Technical value:</strong> industrial monitoring, sensor integration, dashboard alarms, communication validation, and field-ready documentation.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="research hardware">
+            <img src="assets/img/validation-workflow.svg" alt="Circuit simulation and validation workflow diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>University Research</span>
+                <span>Xschem / ngspice</span>
+              </div>
+
+              <h3>Hybrid LIF Neuron Thesis: Automated Circuit Simulation & Validation Workflow</h3>
+
+              <p>
+                Built a repeatable simulation and validation workflow for a 7 nm FinFET CMOS hybrid LIF neuron using
+                Xschem, ngspice, ASAP7 predictive FinFET models, Python waveform post-processing, and MATLAB.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools:</strong> Xschem, ngspice, ASAP7 FinFET models, Python, MATLAB.</li>
+                  <li><strong>Validation:</strong> transient simulation, parameter sweeps, waveform comparison, failure-mode boundary identification, and operating-region mapping.</li>
+                  <li><strong>Result:</strong> evaluated reset behavior, frequency, energy per spike, static power, and robustness across multiple operating variables.</li>
+                  <li><strong>Technical value:</strong> repeatable simulation, waveform analysis, design tradeoff documentation, and technical communication.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="controls">
+            <img src="assets/img/plc-control.svg" alt="PLC relay control system diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>Controls</span>
+                <span>CLICK PLC</span>
+              </div>
+
+              <h3>Autonomous Plant Care PLC Control System</h3>
+
+              <p>
+                Programmed and validated CLICK PLC ladder logic for a sensor-driven automated plant care system with
+                relay-based output control, I/O mapping, wiring validation, interlocks, and commissioning documentation.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools:</strong> CLICK PLC, ladder logic, relays, discrete sensors, wiring validation.</li>
+                  <li><strong>Validation:</strong> I/O mapping, wiring checks, relay output response verification, interlock testing, and commissioning documentation.</li>
+                  <li><strong>Result:</strong> reliable sensor-driven automation with validated output behavior.</li>
+                  <li><strong>Technical value:</strong> PLC fundamentals, discrete I/O, relay control, wiring checks, and structured controls validation.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="manufacturing pcb hardware">
+            <img src="assets/img/smt-flow.svg" alt="SMT and PCBA manufacturing process flow diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>Manufacturing</span>
+                <span>SMT / PCBA</span>
+              </div>
+
+              <h3>SMT Setup Standardization & PCBA Quality Flow</h3>
+
+              <p>
+                Supported prototype PCBA builds and standardized SMT setup practices for a JUKI RS-1R placement machine,
+                including feeder mapping, nozzle/component setup, changeover documentation, in-process testing, final QC,
+                defect tracking, and corrective-action support.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools/process:</strong> JUKI RS-1R, prototype PCBA builds, SMT setup, in-process test, final QC, defect tracking, QMS/5S.</li>
+                  <li><strong>Result:</strong> contributed to approximately 30,000 additional placements per day, 1 hour/day saved, and an 11% daily production efficiency improvement.</li>
+                  <li><strong>Validation:</strong> setup review, quality checks, defect documentation, and corrective-action tracking.</li>
+                  <li><strong>Technical value:</strong> manufacturing-aware engineering, quality traceability, process documentation, and PCBA production support.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="hardware">
+            <img src="assets/img/fpga-pipeline.svg" alt="FPGA image classification throughput pipeline diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>FPGA</span>
+                <span>Validation</span>
+              </div>
+
+              <h3>FPGA Throughput Optimization</h3>
+
+              <p>
+                Resolved timing-closure, implementation, and hardware/software interface issues during FPGA validation
+                for an image-classification pipeline, improving real-time throughput by 30%.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools:</strong> Vivado, Quartus, FPGA validation workflows, hardware/software interface debugging.</li>
+                  <li><strong>Validation:</strong> timing-closure review, implementation debugging, pipeline bottleneck analysis, and throughput comparison.</li>
+                  <li><strong>Result:</strong> improved real-time image-classification throughput by 30%.</li>
+                  <li><strong>Technical value:</strong> digital validation, timing analysis, implementation debugging, and performance improvement.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="it">
+            <img src="assets/img/portfolio-preview.svg" alt="Endpoint deployment and IT support workflow diagram" />
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span>IT Service Delivery</span>
+                <span>KACE / Jira</span>
+              </div>
+
+              <h3>Endpoint Deployment & Technical Support Workflow</h3>
+
+              <p>
+                Supported large-scale campus endpoint deployment and troubleshooting workflows using KACE image deployment,
+                Jira ticket tracking, and BeyondTrust/Bomgar remote support across 1,000+ devices.
+              </p>
+
+              <details>
+                <summary>Quick facts</summary>
+                <ul>
+                  <li><strong>Tools:</strong> KACE, Jira, BeyondTrust/Bomgar, Windows/Linux, endpoint support, AV troubleshooting.</li>
+                  <li><strong>Result:</strong> improved imaging efficiency by 50x and reduced device setup time by 90%.</li>
+                  <li><strong>Validation:</strong> deployment checks, ticket tracking, remote support documentation, and user-facing troubleshooting.</li>
+                  <li><strong>Technical value:</strong> technical systems support, documentation, stakeholder communication, and service delivery execution.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section-pad muted" id="skills">
       <div class="container">
         <div class="section-heading centered reveal">
           <p class="eyebrow">Skills</p>
-          <h2>Technical strengths organized by hiring need.</h2>
-          <p class="section-note">
-            These are the areas I want recruiters to associate with my work: PCB design, hardware validation, controls,
-            simulation, manufacturing support, and technical troubleshooting.
-          </p>
+          <h2>Technical strengths supported by the projects and experience above.</h2>
         </div>
 
         <div class="skill-grid">
@@ -400,397 +814,6 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section-pad" id="experience">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Experience & Education</p>
-          <h2>Experience that supports PCB, hardware validation, controls, manufacturing, and technical systems roles.</h2>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <span class="timeline-date">Apr 2023 – May 2026</span>
-            <h3>Graduate Research Assistant · Electrical Engineering</h3>
-            <p class="org">University of Oklahoma</p>
-            <p>
-              Built repeatable Xschem/ngspice circuit simulation workflows using ASAP7 FinFET models, Python waveform
-              post-processing, and multi-variable parameter sweeps. Analyzed reset behavior, firing frequency, power,
-              energy, and robustness for a hybrid LIF neuron thesis, while also resolving FPGA timing-closure and
-              interface issues that improved image-classification throughput by 30%.
-            </p>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">2025 – 2026</span>
-            <h3>Graduate Teaching Assistant · Electronics Labs</h3>
-            <p class="org">University of Oklahoma</p>
-            <p>
-              Guided students through electronics labs involving oscilloscopes, DMMs, bench power supplies, function
-              generators, MOSFET/BJT switching circuits, PID-control labs, filters, 555 timers, LM324 comparators,
-              safe measurement practices, and structured circuit debugging.
-            </p>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">Jun 2024 – Jul 2024</span>
-            <h3>Electronics Manufacturing Intern</h3>
-            <p class="org">GM Electronics</p>
-            <p>
-              Supported prototype PCBA builds, in-process testing, final QC, defect tracking, and corrective-action
-              documentation. Standardized SMT setup practices for a JUKI RS-1R placement machine, including feeder
-              mapping, nozzle/component setup, and vision-setting workflows in a QMS/5S environment, contributing to
-              approximately 30,000 additional placements per day and an 11% daily production efficiency improvement.
-            </p>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">Aug 2023 – May 2024</span>
-            <h3>Product Design Intern</h3>
-            <p class="org">Tom Love Innovation Hub / Irani Center</p>
-            <p>
-              Led 60+ user and stakeholder interviews, validation testing, and electromechanical prototyping to improve
-              prototype accuracy by 40% and support manufacturability decisions based on sensor limitations, user
-              feedback, and test results.
-            </p>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">May 2021 – Sep 2021</span>
-            <h3>Technology Assistant · Library Technology Platform</h3>
-            <p class="org">University of Oklahoma</p>
-            <p>
-              Supported 1,000+ campus devices across endpoint deployment, troubleshooting, AV support, and user-facing
-              technology service requests. Used KACE image deployment, Jira ticket tracking, and BeyondTrust/Bomgar
-              remote support workflows, improving imaging efficiency by 50x and reducing device setup time by 90%.
-            </p>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">University of Oklahoma · Norman, OK</span>
-            <h3>M.S. Electrical Engineering · Graduated May 2026</h3>
-            <p class="org">GPA 3.8 · Thesis research in CMOS neuromorphic circuit simulation</p>
-            <p>
-              Thesis: A Hybrid Leaky Integrate-and-Fire Neuron with Tunable Reset Behavior in 7 nm Fin Field-Effect
-              Transistor Technology. Focused on Xschem/ngspice simulation, ASAP7 FinFET models, reset behavior,
-              frequency, energy per spike, static power, and robustness analysis.
-            </p>
-
-            <h3>B.S. Electrical Engineering</h3>
-            <p class="org">GPA 3.56</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH / THESIS -->
-    <section class="section-pad muted" id="research">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Thesis Research</p>
-          <h2>Hybrid LIF neuron simulation and reset-aware circuit validation.</h2>
-          <p class="section-note">
-            M.S. thesis research focused on compact CMOS neuromorphic neuron design, Xschem/ngspice simulation,
-            ASAP7 FinFET models, Python waveform analysis, and reset/frequency/energy tradeoffs.
-          </p>
-        </div>
-
-        <article class="project-card research-card reveal" data-category="hardware research">
-          <img src="assets/img/validation-workflow.svg" alt="Circuit simulation and validation workflow diagram" />
-
-          <div class="project-body">
-            <div class="project-meta">
-              <span>University Research</span>
-              <span>Apr 2023 – May 2026</span>
-              <span>Xschem / ngspice</span>
-            </div>
-
-            <h3>A Hybrid Leaky Integrate-and-Fire Neuron with Tunable Reset Behavior in 7 nm FinFET Technology</h3>
-
-            <p>
-              Designed and simulated a compact Besrour-derived hybrid LIF neuron with an added reset/timing branch.
-              The workflow compared the hybrid neuron against a baseline design using reset behavior, firing frequency,
-              dynamic energy per spike, static power, and robustness.
-            </p>
-
-            <details>
-              <summary>Quick facts</summary>
-              <ul>
-                <li><strong>Tools:</strong> Xschem, ngspice, ASAP7 FinFET models, Python, MATLAB.</li>
-                <li><strong>Validation:</strong> transient simulation, parameter sweeps, waveform post-processing, frequency and energy analysis.</li>
-                <li><strong>Result:</strong> identified operating tradeoffs between performance-oriented and robustness-oriented reset behavior.</li>
-                <li><strong>Recruiter signal:</strong> repeatable simulation, waveform analysis, design tradeoff documentation, and research-grade technical communication.</li>
-              </ul>
-            </details>
-
-            <div class="note-box">
-              <p>
-                Thesis PDF and selected waveform/schematic visuals will be added here after final upload.
-              </p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section-pad" id="projects">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Projects</p>
-          <h2>Project snapshots with real engineering proof.</h2>
-          <p class="section-note">
-            Filter by role family. Each project includes tools, validation method, result, and a technical visual.
-            Real project photos and screenshots can be added later without changing the structure.
-          </p>
-        </div>
-
-        <div class="filter-bar reveal" aria-label="Project filters">
-          <button class="filter-btn active" type="button" data-filter="all">All</button>
-          <button class="filter-btn" type="button" data-filter="pcb">PCB</button>
-          <button class="filter-btn" type="button" data-filter="hardware">Hardware Test</button>
-          <button class="filter-btn" type="button" data-filter="controls">Controls</button>
-          <button class="filter-btn" type="button" data-filter="manufacturing">Manufacturing</button>
-          <button class="filter-btn" type="button" data-filter="research">Research</button>
-          <button class="filter-btn" type="button" data-filter="it">IT</button>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card reveal" data-category="pcb">
-            <img src="assets/img/pcb-release.svg" alt="PCB design and manufacturing release diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>PCB Design</span>
-                <span>Altium Designer</span>
-              </div>
-
-              <h3>PCB Design & Manufacturing Release Package</h3>
-
-              <p>
-                Completed a full PCB design workflow in Altium Designer: schematic capture, custom symbol and footprint
-                libraries, component placement, manual routing, ERC/DRC verification, and manufacturing package generation.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools:</strong> Altium Designer, schematic capture, PCB layout, ERC/DRC, Gerber/NC drill files, BOM, pick-and-place, STEP/3D, DFM.</li>
-                  <li><strong>Technical focus:</strong> 4-layer stackup planning, power/ground planes, mixed-signal grounding, and EMI/EMC-aware routing.</li>
-                  <li><strong>Validation:</strong> design-rule checks, output-job consistency review, manufacturing handoff review, and DFM-oriented documentation.</li>
-                  <li><strong>Recruiter signal:</strong> practical board-design workflow from schematic to fabrication/assembly release.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="controls hardware">
-            <img src="assets/img/monitoring-system.svg" alt="Industrial monitoring system architecture diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>Controls</span>
-                <span>Python / Modbus RTU</span>
-              </div>
-
-              <h3>Industrial Air Compressor Monitoring System</h3>
-
-              <p>
-                Designed and deployed a distributed industrial monitoring system using Raspberry Pi, ADS1115 ADC interfaces,
-                RS-485 wiring, Modbus RTU communication, and a Streamlit/Plotly dashboard with alarm thresholds.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools:</strong> Raspberry Pi, Python, ADS1115 ADC, RS-485, Modbus RTU, Streamlit, Plotly.</li>
-                  <li><strong>Validation:</strong> sensor node checks, Modbus RTU communication verification, dashboard testing, alarm threshold testing, and deployment documentation.</li>
-                  <li><strong>Result:</strong> reduced compressor downtime by 20% through better operator visibility and documented troubleshooting workflows.</li>
-                  <li><strong>Recruiter signal:</strong> industrial monitoring, sensor integration, dashboard alarms, communication validation, and field-ready documentation.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="research hardware">
-            <img src="assets/img/validation-workflow.svg" alt="Circuit simulation and validation workflow diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>University Research</span>
-                <span>Xschem / ngspice</span>
-              </div>
-
-              <h3>Hybrid LIF Neuron Thesis: Automated Circuit Simulation & Validation Workflow</h3>
-
-              <p>
-                Built a repeatable simulation and validation workflow for a 7 nm FinFET CMOS hybrid LIF neuron using
-                Xschem, ngspice, ASAP7 predictive FinFET models, Python waveform post-processing, and MATLAB.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools:</strong> Xschem, ngspice, ASAP7 FinFET models, Python, MATLAB.</li>
-                  <li><strong>Validation:</strong> transient simulation, parameter sweeps, waveform comparison, failure-mode boundary identification, and operating-region mapping.</li>
-                  <li><strong>Result:</strong> evaluated reset behavior, frequency, energy per spike, static power, and robustness across multiple operating variables.</li>
-                  <li><strong>Recruiter signal:</strong> repeatable simulation, waveform analysis, design tradeoff documentation, and technical communication.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="controls">
-            <img src="assets/img/plc-control.svg" alt="PLC relay control system diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>Controls</span>
-                <span>CLICK PLC</span>
-              </div>
-
-              <h3>Autonomous Plant Care PLC Control System</h3>
-
-              <p>
-                Programmed and validated CLICK PLC ladder logic for a sensor-driven automated plant care system with
-                relay-based output control, I/O mapping, wiring validation, interlocks, and commissioning documentation.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools:</strong> CLICK PLC, ladder logic, relays, discrete sensors, wiring validation.</li>
-                  <li><strong>Validation:</strong> I/O mapping, wiring checks, relay output response verification, interlock testing, and commissioning documentation.</li>
-                  <li><strong>Result:</strong> reliable sensor-driven automation with validated output behavior.</li>
-                  <li><strong>Recruiter signal:</strong> PLC fundamentals, discrete I/O, relay control, wiring checks, and structured controls validation.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="manufacturing pcb hardware">
-            <img src="assets/img/smt-flow.svg" alt="SMT and PCBA manufacturing process flow diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>Manufacturing</span>
-                <span>SMT / PCBA</span>
-              </div>
-
-              <h3>SMT Setup Standardization & PCBA Quality Flow</h3>
-
-              <p>
-                Supported prototype PCBA builds and standardized SMT setup practices for a JUKI RS-1R placement machine,
-                including feeder mapping, nozzle/component setup, changeover documentation, in-process testing, final QC,
-                defect tracking, and corrective-action support.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools/process:</strong> JUKI RS-1R, prototype PCBA builds, SMT setup, in-process test, final QC, defect tracking, QMS/5S.</li>
-                  <li><strong>Result:</strong> contributed to approximately 30,000 additional placements per day, 1 hour/day saved, and an 11% daily production efficiency improvement.</li>
-                  <li><strong>Validation:</strong> setup review, quality checks, defect documentation, and corrective-action tracking.</li>
-                  <li><strong>Recruiter signal:</strong> manufacturing-aware engineering, quality traceability, process documentation, and PCBA production support.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="hardware">
-            <img src="assets/img/fpga-pipeline.svg" alt="FPGA image classification throughput pipeline diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>FPGA</span>
-                <span>Validation</span>
-              </div>
-
-              <h3>FPGA Throughput Optimization</h3>
-
-              <p>
-                Resolved timing-closure, implementation, and hardware/software interface issues during FPGA validation
-                for an image-classification pipeline, improving real-time throughput by 30%.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools:</strong> Vivado, Quartus, FPGA validation workflows, hardware/software interface debugging.</li>
-                  <li><strong>Validation:</strong> timing-closure review, implementation debugging, pipeline bottleneck analysis, and throughput comparison.</li>
-                  <li><strong>Result:</strong> improved real-time image-classification throughput by 30%.</li>
-                  <li><strong>Recruiter signal:</strong> digital validation, timing analysis, implementation debugging, and performance improvement.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="it">
-            <img src="assets/img/portfolio-preview.svg" alt="Endpoint deployment and IT support workflow diagram" />
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span>IT Service Delivery</span>
-                <span>KACE / Jira</span>
-              </div>
-
-              <h3>Endpoint Deployment & Technical Support Workflow</h3>
-
-              <p>
-                Supported large-scale campus endpoint deployment and troubleshooting workflows using KACE image deployment,
-                Jira ticket tracking, and BeyondTrust/Bomgar remote support across 1,000+ devices.
-              </p>
-
-              <details>
-                <summary>Quick facts</summary>
-                <ul>
-                  <li><strong>Tools:</strong> KACE, Jira, BeyondTrust/Bomgar, Windows/Linux, endpoint support, AV troubleshooting.</li>
-                  <li><strong>Result:</strong> improved imaging efficiency by 50x and reduced device setup time by 90%.</li>
-                  <li><strong>Validation:</strong> deployment checks, ticket tracking, remote support documentation, and user-facing troubleshooting.</li>
-                  <li><strong>Recruiter signal:</strong> technical systems support, documentation, stakeholder communication, and service delivery execution.</li>
-                </ul>
-              </details>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section class="section-pad muted" id="resume">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Resume</p>
-          <h2>One clear resume for recruiters. Detailed project proof below it.</h2>
-          <p class="section-note">
-            To keep the website simple and credible, I provide one main public resume here. My portfolio sections give
-            deeper technical evidence across PCB design, hardware validation, controls, manufacturing, research, and IT systems.
-          </p>
-        </div>
-
-        <div class="resume-grid">
-          <article class="resume-card reveal">
-            <h3>Main Electrical Engineering Resume</h3>
-            <p>
-              Best starting point for recruiters reviewing me for electrical engineering, PCB design, hardware validation,
-              controls/automation, manufacturing/test, and technical systems roles.
-            </p>
-            <a class="btn btn-primary" href="assets/docs/Adesh_Bhor_Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
-          </article>
-
-          <article class="resume-card reveal">
-            <h3>Role-specific fit</h3>
-            <p>
-              For specific job applications, I tailor the same core experience toward the job family. The public portfolio
-              keeps the story consistent while still showing the depth recruiters need to evaluate fit.
-            </p>
-            <a class="btn btn-secondary" href="#projects">Review Project Evidence</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
     <section class="section-pad" id="contact">
       <div class="container contact-card reveal">
         <p class="eyebrow">Contact</p>
@@ -798,14 +821,14 @@
         <h2>Open to PCB design, hardware validation, controls, manufacturing/test, and electrical engineering roles.</h2>
 
         <p>
-          The fastest way to reach me is email. I am based in Dallas, TX, open to relocation, and interested in engineering
-          roles where I can contribute to design, validation, documentation, troubleshooting, and manufacturing-aware execution.
+          I am based in Dallas, TX, open to relocation, and interested in engineering roles where I can contribute to
+          design, validation, documentation, troubleshooting, and manufacturing-aware execution.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:bhor.adesh292@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="assets/docs/Adesh_Bhor_Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/adesh-bhor" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn btn-secondary" href="https://github.com/adeshbhor01" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
     </section>
@@ -822,9 +845,6 @@
   <script src="script.js"></script>
 
   <script>
-    // Fallback JavaScript added directly in index.html so the key interactions work
-    // even if the external script.js has an issue.
-
     document.addEventListener("DOMContentLoaded", function () {
       const year = document.getElementById("year");
       if (year) {
@@ -864,7 +884,6 @@
           projectCards.forEach(function (card) {
             const categories = card.getAttribute("data-category") || "";
             const shouldShow = selectedFilter === "all" || categories.includes(selectedFilter);
-
             card.style.display = shouldShow ? "" : "none";
           });
         });
