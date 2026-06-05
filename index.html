@@ -239,6 +239,28 @@
     .research-card {
       max-width: 1080px;
       margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .research-image-frame {
+      width: 100%;
+      height: 430px;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .research-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transform: scale(2.65);
+      transform-origin: center center;
+      display: block;
     }
 
     .project-links {
@@ -255,13 +277,6 @@
     .project-card img {
       width: 100%;
       object-fit: cover;
-    }
-
-    .research-card img {
-      object-fit: contain !important;
-      background: #ffffff;
-      padding: 24px;
-      max-height: 420px;
     }
 
     .site-footer a {
@@ -467,6 +482,14 @@
       .hero-actions .btn {
         text-align: center;
       }
+
+      .research-image-frame {
+        height: 330px;
+      }
+
+      .research-image-frame img {
+        transform: scale(2.45);
+      }
     }
 
     @media (max-width: 440px) {
@@ -517,9 +540,12 @@
         min-height: 120px !important;
       }
 
-      .research-card img {
-        padding: 14px;
-        max-height: 300px;
+      .research-image-frame {
+        height: 260px;
+      }
+
+      .research-image-frame img {
+        transform: scale(2.2);
       }
     }
   </style>
@@ -780,7 +806,9 @@
         </div>
 
         <article class="project-card research-card reveal" data-category="hardware research">
-          <img src="assets/img/thesis-hybrid-schematic.png" alt="Hybrid LIF neuron schematic from thesis research" />
+          <div class="research-image-frame">
+            <img src="assets/img/thesis-hybrid-schematic.png" alt="Hybrid LIF neuron schematic from thesis research" />
+          </div>
 
           <div class="project-body">
             <div class="project-meta">
