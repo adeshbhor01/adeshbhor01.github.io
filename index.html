@@ -241,27 +241,20 @@
       margin: 0 auto;
     }
 
-    .note-box {
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 18px;
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(15, 118, 110, 0.08);
-      border: 1px solid rgba(15, 118, 110, 0.18);
-    }
-
-    .note-box p {
-      margin: 0;
     }
 
     .project-grid {
       align-items: stretch;
     }
 
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
+    .project-card img {
+      width: 100%;
+      object-fit: cover;
     }
 
     .site-footer a {
@@ -775,7 +768,7 @@
         </div>
 
         <article class="project-card research-card reveal" data-category="hardware research">
-          <img src="assets/img/validation-workflow.svg" alt="Circuit simulation and validation workflow diagram" />
+          <img src="assets/img/thesis-research-overview.png" alt="Hybrid LIF neuron schematic, waveform, sweep, and energy summary" />
 
           <div class="project-body">
             <div class="project-meta">
@@ -802,10 +795,8 @@
               </ul>
             </details>
 
-            <div class="note-box">
-              <p>
-                Thesis PDF and selected waveform/schematic visuals will be added here after final upload.
-              </p>
+            <div class="project-links">
+              <a class="btn btn-secondary" href="assets/docs/2026_Bhor_Adesh_Thesis.pdf" target="_blank" rel="noreferrer">View Thesis PDF</a>
             </div>
           </div>
         </article>
@@ -859,7 +850,7 @@
           </article>
 
           <article class="project-card reveal" data-category="controls hardware">
-            <img src="assets/img/monitoring-system.svg" alt="Industrial monitoring system architecture diagram" />
+            <img src="assets/img/air-compressor-monitoring-overview.png" alt="Selected visuals for the air compressor monitoring system" />
 
             <div class="project-body">
               <div class="project-meta">
@@ -887,7 +878,7 @@
           </article>
 
           <article class="project-card reveal" data-category="research hardware">
-            <img src="assets/img/validation-workflow.svg" alt="Circuit simulation and validation workflow diagram" />
+            <img src="assets/img/thesis-research-overview.png" alt="Hybrid LIF neuron schematic, waveform, sweep, and energy summary" />
 
             <div class="project-body">
               <div class="project-meta">
@@ -911,11 +902,15 @@
                   <li><strong>Technical value:</strong> repeatable simulation, waveform analysis, design tradeoff documentation, and technical communication.</li>
                 </ul>
               </details>
+
+              <div class="project-links">
+                <a class="btn btn-secondary" href="assets/docs/2026_Bhor_Adesh_Thesis.pdf" target="_blank" rel="noreferrer">View Thesis PDF</a>
+              </div>
             </div>
           </article>
 
           <article class="project-card reveal" data-category="controls">
-            <img src="assets/img/plc-control.svg" alt="PLC relay control system diagram" />
+            <img src="assets/img/plant-care-plc-overview.png" alt="Autonomous plant care PLC system visuals" />
 
             <div class="project-body">
               <div class="project-meta">
